@@ -1,0 +1,21 @@
+<div class="container mt-5">
+  <div class="row">
+      <div class="col-md-4 mb-3" *ngFor="let item of bookList | paginate : {itemsPerPage: tableSize, currentPage: page, totalItems: count}; let i = index">
+          <div class="card">
+              <div class="card-body">
+                  <h5 class="card-title">{{item.name}}</h5>
+                  <h6 class="card-subtitle mb-2 text-muted">ISBN: {{item.isbn}}</h6>
+                  <p class="card-text">Sayfa: {{item.page}}</p>
+                  <p class="card-text">Dil: {{item.language}}</p>
+                  <p class="card-text">Stok Adedi: {{item.unitsInStock}}</p>
+                  <p class="card-text">Açıklama: {{item.description}}</p>
+                  <p class="card-text">Kategori: {{item.categoryName}}</p>
+                  <p class="card-text">Yayın Evi: {{item.publisherName}}</p>
+                  <p class="card-text">Yazar: {{item.authorName}}</p>
+                  <button type="button" class="btn btn-outline-danger">Ödünç Al</button>
+              </div>
+          </div>
+      </div>
+  </div>
+  <pagination-controls previousLabel="Prev" nextLabel="Next" (pageChange)="onTableDataChange($event)"></pagination-controls>
+</div>

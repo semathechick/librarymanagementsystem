@@ -1,0 +1,22 @@
+<div class="content animate__animated  animate__slideInUp">
+    <div class="col-md-12">
+    <div class="card">
+        <div class="card-header">Güncelleme</div>
+        <div class="card-body">
+            <form [formGroup]="categoryUpdateForm">
+                
+                <div class="mb-3">
+                    <label>Kategori Adı:</label>
+                    <input type="text" placeholder={{categoryService.selectedCategory.categoryName}} formControlName="categoryName" (change)="onNameChange($event)" class="form-control" value=""/>
+                    <myinput-errors fieldName="categoryName" />
+                </div>
+   
+            </form>
+        </div>
+        <div class="card-footer">
+            <button class="btn btn-outline-dark w-50" (click)="updateToDb()">Güncelle</button>
+           
+           
+        </div>
+    </div>
+</div>

@@ -1,0 +1,39 @@
+<div class="container mt-5 animate__animated animate__fadeInRight">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <div class="card">
+          <div class="card-body">
+            <h6 class="card-title">Rezervasyon Yapan Kişi: {{ authService.loggedInMember?.firstName?.toUpperCase() + " " + authService.loggedInMember?.lastName?.toUpperCase() }}</h6>
+            <h5 class="card-title">Rezervasyon Yapılacak Kitap: {{ bookService.selectedBook.name }}</h5>
+            
+            <form [formGroup]="reservationForm" (ngSubmit)="onSubmit()">
+              <div>
+                <div class="mb-3" hidden>
+                  <label for="bookId">Kitap ID:</label>
+                  <input type="number" class="form-control" id="bookId" formControlName="bookId" readonly>
+                </div>
+                
+                <div class="mb-3" hidden>
+                  <label for="memberId">Kullanıcı ID:</label>
+                  <input type="number" class="form-control" id="memberId" formControlName="memberId" readonly>
+                </div>
+                
+                <div class="mb-3">
+                  <label for="reservationDate">Rezervasyon Tarihi:</label>
+                  <input type="date" class="form-control" id="reservationDate" formControlName="rezervationDate" >
+                </div>
+                
+                <div class="mb-3">
+                  <label for="expirationDate">Geçerlilik Tarihi:</label>
+                  <input type="date" class="form-control" id="expirationDate" formControlName="expirationDate">
+                </div>
+                
+                <button type="submit" class="btn btn-outline-dark w-50" [disabled]="!reservationForm.valid">Rezervasyon Yap</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

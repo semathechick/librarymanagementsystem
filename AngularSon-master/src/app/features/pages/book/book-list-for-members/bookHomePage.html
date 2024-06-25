@@ -1,0 +1,16 @@
+<div class="row">
+    
+    <h1 style="text-align:left;">Ürün listesi</h1>
+<div *ngFor="let item of bookList" class="card" style="width: 18rem;">
+    
+    <div class="card-body">
+      <h1 class="card-title">Kitap: {{item.name.toUpperCase() }} </h1>
+      <p class="card-text">ISBN:{{item.isbn}}</p>
+      <p class="card-text">Açıklama:{{item.description}}</p>
+      <p class="card-text">Stok:{{item.unitsInStock}}</p>
+      
+      <p class="card-text">Açıklama:{{item.description}}</p>
+      <a   class="btn btn-primary">Satın Al</a>
+    </div>
+  </div>
+</div>

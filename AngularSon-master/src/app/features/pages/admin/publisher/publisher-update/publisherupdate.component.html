@@ -1,0 +1,21 @@
+<div class="content animate__animated animate__slideInUp">
+    <div class="col-md-12">
+    <div class="card">
+        <div class="card-header">YayınEvi Güncelleme</div>
+        <div class="card-body">
+            <form [formGroup]="publisherUpdateForm">
+                
+                <div class="mb-3"><p>{{publisherService.selectedPublisher.publisherId}}</p>
+                    <label id="publisherName">Yayınevi Adı:</label>
+                    <input type="text" id="publisherName" formControlName="name" placeholder={{publisherService.selectedPublisher.name}} formControlName="name" (change)="onNameChange($event)" class="form-control" />
+                    <myinput-errors fieldName="name" />
+                </div>
+            </form>
+        </div>
+        <div class="card-footer">
+            <button class="btn btn-outline-dark w-50" (click)="updateToDb()">Güncelle</button>
+           
+           
+        </div>
+    </div>
+</div>

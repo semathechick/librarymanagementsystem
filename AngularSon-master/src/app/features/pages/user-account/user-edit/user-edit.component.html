@@ -1,0 +1,26 @@
+<div class="col-8 animate__animated animate__fadeInTopLeft">
+
+  <form [formGroup]="memberUpdateForm">
+    
+
+   <div class="mb-3">
+        <label>Kullanıcı Adı:</label>
+        <input type="text" placeholder="Ad" formControlName="firstName"  class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label>Kullanıcı Soyadı:</label>
+        <input type="text" placeholder="Soyad" formControlName="lastName"  class="form-control"/>
+    </div>
+   
+    <div class="mb-3">
+        <label>Email:</label>
+        <input type="email" placeholder="Email" formControlName="email"  class="form-control" value="{{authService.loggedInMember?.email}}" readonly/>
+    </div>
+    
+    
+</form>
+    
+<button type="button" class="btn btn-outline-dark" (click)="updateToDb()">Güncelle</button>
+
+    </div>

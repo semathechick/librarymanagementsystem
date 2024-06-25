@@ -1,0 +1,62 @@
+.baslik{
+  border: 1px solid black;
+ font-size: larger;
+ text-decoration: none;
+ color: white;
+ background-color: rgb(87, 80, 80);
+padding: 20px;
+justify-content: center;
+align-items: center;
+display: block;
+border-radius: 5px;
+text-align: center;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+letter-spacing: 2px;
+background-image: linear-gradient( transparent, rgb(139, 75, 75));
+
+
+}
+.baslik:hover{
+background-image: linear-gradient( transparent, rgb(139, 75, 75));
+color:rgb(223, 208, 208);
+
+}
+.accordion{
+  border: 1px solid rgb(134, 57, 57);
+  border-radius: 5px;
+.accordion-item{
+
+ .accordion-header{
+  padding:5px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ 
+}
+ 
+}}
+button:focus{
+  
+    border-color: #502f32 ;
+    border: 2px solid;
+    background-color: #807677;
+    box-shadow: none;
+    color: antiquewhite;
+    padding-right: 10px;
+   
+
+    
+  }
+
+  
+a:hover{
+
+padding-left: 10px;
+
+}
+.container{
+  
+display:grid;
+align-items: center;
+//background-image: linear-gradient(to bottom, transparent, rgb(211, 50, 20));
+
+
+}

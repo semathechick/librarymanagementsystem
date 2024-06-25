@@ -1,0 +1,31 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+#toast-container > .toast-success {
+  background-color: rgb(240, 105, 105);
+  margin-top: 40px;
+  margin-right:550px;
+ 
+  }
+  #toast-container > .toast-warning {
+    background-color: rgb(138, 209, 145);
+    margin-top: 40px;
+  margin-right:550px;
+  }
+  #toast-container > .toast-info {
+    background-color: rgb(241, 133, 66);
+    margin-top: 40px;
+  margin-right:550px;
+  }
+  #toast-container > .toast-error {
+    background-color: rgb(230, 39, 39);
+    margin-top: 40px;
+  margin-right:550px;
+  }
+
+ 
+  
+  

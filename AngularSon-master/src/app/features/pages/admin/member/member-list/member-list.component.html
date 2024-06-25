@@ -1,0 +1,22 @@
+<div class="container mt-5">
+    <h1 >Üyeler</h1>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Üye Adı</th>
+        <th>Üye Soyadı</th>
+        <th>Email</th>
+       
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of memberList">
+        <th scope="row">{{ item.firstName }}</th>
+        <th scope="row">{{ item.lastName }}</th>
+        <th scope="row">{{ item.email }}</th>
+        
+        
+      </tr>
+    </tbody>
+  </table>
+</div>

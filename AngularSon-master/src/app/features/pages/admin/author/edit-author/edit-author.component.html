@@ -1,0 +1,42 @@
+
+<div class="content">
+    <div class="card" >
+        <div class="card-header"><h5 class="title font-weight-bold">Yazar Düzenle</h5></div>
+    
+        <div class="card-body">
+    
+          
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="row"> Yazarlar</th>
+                    <th scope="row"> Kimlik</th>
+                   
+                  
+                   
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let item of authorList " >  <!-- | filterBookListForCategory : searchKey -->
+                    <th scope="row">{{item.name}}</th>
+                    <th scope="row">{{item.identityNumber}}</th>
+                    
+                    <th>
+                    <button  class="btn btn-outline-danger me-3" (click)="deleteAuthor($event,item.id)" > Sil</button> 
+                    <a  class="btn btn-outline-dark" routerLink="update/{{item.id}}" (click)="onSelectAuthor(item)"> Güncelle</a></th>
+                  </tr>
+                </tbody>
+             
+                <p *ngIf="authorList.length <= 0">Yükleniyor...</p>
+               
+           </table>
+        
+           <div class="card-footer" >
+            
+        </div>
+        </div>
+    
+       
+    
+      </div>
+    </div>

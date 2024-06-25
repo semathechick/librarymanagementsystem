@@ -1,0 +1,50 @@
+<div class="container mt-4">
+
+    <div class="row">
+       <div class="img col-md-1">
+
+     </div>
+     <div class="profile-nav col-md-4 ">
+         <div class="userprofil">
+             <div class="user-heading">
+
+                 <h2 class=" mt-3 mb-3">{{authService.loggedInMember?.firstName+ " "+ authService.loggedInMember?.lastName}}</h2>
+                 <p class="baslik">{{authService.loggedInMember?.email}}</p>
+             </div>
+             <ul class="list-group nav nav-pills nav-stacked">
+                <li type="button" class="boyut list-group-item" routerLink="edituser">Profili Düzenle</li>
+            </ul>
+            <ul class="list-group nav nav-pills nav-stacked">
+              <li type="button" class="boyut list-group-item" routerLink="loanHistory">Ödünç Geçmişi</li>
+          </ul>
+          <ul class="list-group nav nav-pills nav-stacked">
+            <li type="button" class="boyut list-group-item" routerLink="reservation">Rezervasyonlar</li>
+        </ul>
+        </div>
+    </div>
+    <div class="profile-info col-md-6">
+      <div class="userprofil1">
+          <div class="user-body bio-graph-info mt-3 mb-3">
+              <h3>Hesabım </h3>
+              <div class="row">
+                  <div class="bio-row">
+                      <p><span>Ad: </span>{{authService.loggedInMember?.firstName}} </p> <!---->
+                  </div>
+                  <div class="bio-row">
+                      <p><span>Soyad: </span> {{authService.loggedInMember?.lastName}} </p>
+                  </div>
+                  <div class="bio-row">
+                      <p><span>E-posta:{{authService.loggedInMember?.email}} </span> </p>
+                  </div>
+
+              </div>
+          </div>
+      </div>
+
+          <router-outlet></router-outlet>
+
+
+    </div>
+  </div> 
+
+  </div>

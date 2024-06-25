@@ -1,0 +1,50 @@
+<div class="container mt-5">
+  <div class="mb-3">
+    <br>
+    <div class="row">
+      <div class="dropfirst d-flex align-items-center">
+        <div class="dropdown-center me-2">
+          <button class="first btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Genel Arama
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" routerLink="/getBooksForIsbnFilter">ISBN Arama</a></li>
+          </ul>
+        </div>
+        <input class="form-control me-2 fark" style="width: 450px;" type="search" placeholder="Anahtar Kelimeye Göre Kitap Arayın" aria-label="Search" [(ngModel)]="bookFilter">
+      </div>
+    </div>
+  </div>
+
+  <div class="row d-flex mt-5">
+    <div class="col-lg-4 col-md-6 col-sm-12 mb-3" *ngFor="let item of bookList | book:bookFilter | paginate: {itemsPerPage: tableSize, currentPage: page, totalItems: count}; let i = index">
+      <div class="prd-main-wrapper">
+        <div class="prd-wrapper">
+          <div class="product-img">
+            <img src="/assets/img/arkaplan.jpg" alt="" width="120px" height="162px">
+          </div>
+        </div>
+        <div class="prd-content">
+          <div class="prd-card-wrapper">
+            <div class="prd-infos">
+              <h5 class="card-title">{{item.name}}</h5>
+              <p class="card-text">Yazar: {{item.authorName}}</p>
+            </div>
+          </div>
+          <div class="prd-info-wrapper">
+            <div class="prdm">
+              <a>Kategori: {{item.categoryName}}</a>
+              <p>Yayınevi: {{item.publisherName}}</p>
+            </div>
+          </div>
+          <div class="prd-buttons w-100">
+            <button type="button" class="btn btn-outline-danger w-50 mr-5" *ngIf="authService.loggedInMember != null" (click)="onSelectBook(item, 'borrow')">Ödünç Al</button>
+            <button type="button" class="btn btn-outline-danger w-50 mr-5" *ngIf="authService.loggedInMember != null" (click)="onSelectBook(item, 'reserve')">Rezerve Et</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <pagination-controls previousLabel="Önceki" nextLabel="Sonraki" class="pagination-spreads" (pageChange)="onTableDataChange($event)"></pagination-controls>
+</div>

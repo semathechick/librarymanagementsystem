@@ -1,0 +1,15 @@
+input{
+    border: 1px solid black;
+
+}
+input:focus{
+    border-color: #502f32 ;
+    border: 2px solid;
+    outline: none;
+
+    box-shadow:0 0 0 0.2rem rgb(91, 68, 68, 0.25);
+    .checked{
+        color:black;
+    }
+    
+}

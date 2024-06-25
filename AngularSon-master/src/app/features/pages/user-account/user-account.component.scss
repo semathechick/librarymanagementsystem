@@ -1,0 +1,64 @@
+.container{
+   .row{
+        
+        .img{
+            margin-left: 30px;   
+            background: url(/assets/img/purpledriedflower.png) center center;
+            background-size: cover;
+           // position:static;
+           border-radius: 5px;
+            //object-fit: cover;
+        }
+
+       /*  .img{
+            
+            background: url(/assets/img/profilbook.png) center center;
+            background-size: cover;
+           
+            //object-fit: cover;
+        }
+ */
+       
+        .profile-nav{
+            
+           margin-left: 10px;
+            .userprofil{
+                .boyut{
+                    margin-top: 10px;
+                    width: 300px;
+                    text-align: center;
+                    padding: 10px;
+                    font-weight: bold;
+                    border:1px solid black;
+
+                }
+                .boyut:hover{
+                    border-color: #814348 ;
+                    border: 1px solid;
+                    box-shadow:0 0 0 0.2rem rgba(131, 70, 70, 0.25);
+                    color:  rgb(116, 27, 27);;
+                }
+                .user-heading{
+                    h2{
+                        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                    }
+                  
+                    p{
+                       font-family:monospace;  
+                    }}
+                 }
+            }
+        }
+        .profile-info{
+            
+            .userprofil1{
+              
+                .user-body{
+                    
+                    .bio-row{
+                       border-left: 1px solid black;
+                    }
+                }
+            }
+        }
+    }

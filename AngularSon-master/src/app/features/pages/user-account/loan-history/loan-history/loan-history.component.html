@@ -1,0 +1,9 @@
+<div class="col-8 animate__animated animate__fadeInTopLeft">
+  <div *ngIf="myResponseBorrowed.length == 0">
+    <p>Ödünç alma geçmişi yok!</p>
+  </div>
+  <div *ngFor="let item of myResponseBorrowed">
+    <p>{{ item | json }}</p>
+    <button type="button" (click)="bookReturn(item)">İade Et</button>
+  </div>
+</div>

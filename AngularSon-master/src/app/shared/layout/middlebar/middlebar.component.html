@@ -1,0 +1,60 @@
+
+
+  
+    <nav class="navbar navbar-expand-md d-flex align-items-center">
+      
+        <div class="container-fluid">
+           
+
+            <a routerLink="/homepage"  class="navbar-brand ">
+           <h2 class="ml-4">SSMS Kütüphanesi</h2>
+            </a>
+
+
+            <div class="d-flex align-items-center">       
+             
+              <form class="d-flex" id="fark" role="search" (submit)="onSearch()" target="_blank">
+                <input class="form-control me-2" style="width: 450px;" type="search" placeholder="başlık, isbn, yayınevi ya da yazar giriniz" aria-label="Search" [(ngModel)]="bookFilter" name="bookFilter">
+                <button class="btn" type="submit"><i class="bi bi-search"></i></button>
+            </form>
+            
+              
+              
+            </div>
+       
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" ><img src="assets/img/heart2.png" alt="" width="25px" height="25px"></a>
+              </li>
+            
+               
+              <!--User profile-->
+              <div *ngIf="!isLoggedIn()">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" routerLink="/login"><img src="/assets/img/user3.png" alt="" width="25px" height="25px"></a>
+              </li>
+             </div>
+             <div id="auth" class="btn-group "  *ngIf="isLoggedIn()" >
+              <button  type="button" class="btn  dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="bi bi-person-circle"></i> {{ authService.loggedInMember ? authService.loggedInMember.firstName + ' ' + authService.loggedInMember.lastName : 'Admin' }}
+            
+              </button>
+              <ul class="dropdown-menu dropdown-menu-end  dropdown-menu-lg-start">
+                <li><button routerLink="/homepage/userprofile/{{authService.loggedInMember?.id}}" class="dropdown-item" type="button">Hesabım</button></li>
+                <li><button (click)="logOut()" class="dropdown-item" type="button"> <i class="bi bi-box-arrow-right"></i> Çıkış</button></li>
+              </ul>
+            </div>
+
+              
+              <li class="nav-item">
+                <a routerLink="/admin" class="nav-link active"><img src="assets/img/book1.png" alt="" width="25px;" height="25px;"></a>
+              </li>
+           
+            </ul>
+          </div>
+          
+        
+      </nav>
+   
+  
+    

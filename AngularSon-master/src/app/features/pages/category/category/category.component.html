@@ -1,0 +1,8 @@
+<h5>KATEGORİLER</h5>
+<ul  class="list-group">
+    <li (click)="setCurrentCategory(category)" *ngFor="let category of categories" 
+    routerLink="/book/category/{{category.id}},{{category.categoryName}}"
+    [class]="getCurrentCategory(category)">{{category.categoryName}}</li>
+  </ul>
+<h5 *ngIf="currentCategory">{{currentCategory.categoryName}} türünü seçtiniz</h5>
+

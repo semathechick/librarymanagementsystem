@@ -1,0 +1,96 @@
+
+<div class="container">
+    <img class="desen" src="/assets/img/desen.png" alt="">
+
+
+
+<div class="container" id="firstrow">
+  <div class="row d-flex">
+    <div class="col-4">
+      <div class="prd-main-wrapper">
+        <div class="prd-content">
+          <div class="prd-card-wrapper">
+            <div class="boxes d-flex">
+              <img class="me-2" src="/assets/img/promotion.png" alt="" width="20px" height="20px">
+            <h4>Duyurular</h4>
+            </div>
+            <div class="prd-infos" *ngFor="let item of announcementList" >
+             <!--  <h5 class="card-title mb-2">{{item.organization}}</h5> -->
+             <h6 class="card-subtitle mb-2 ">{{item.title}}</h6>
+             <p class="card-text"> <marquee behavior="scroll" direction="right">{{item.description}}</marquee></p>
+  
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-4">
+      <div class="gallery">
+        <img class="libs" src="/assets/img/booksunsihe.png" alt=""  routerLink="/getBooksForMembers">
+        <img class="libs" src="/assets/img/libraryold.png" alt=""  routerLink="/getBooksForMembers">
+        <img class="libs" src="/assets/img/reading.png" alt=""  routerLink="/getBooksForMembers">
+        <img class="libs" src="/assets/img/studying.png" alt=""  routerLink="/getBooksForMembers">
+      </div>
+    </div>
+
+    <div class="col-4">
+
+
+      <div class="aaa prd-main-wrapper">
+       
+        <div class="prd-content">
+          <div class="prd-card-wrapper">
+            <div class="boxes d-flex">
+              <img class="me-2" src="/assets/img/hyperlink.png" alt="" width="20px" height="20px">
+            <h4>Bağlantılar</h4>
+            </div>
+            <div class="prd-infos2" style="position: relative;" >
+              <ul class="icon-menu">
+                <div class="baglanti ">
+                <li>
+               <img routerLink="/homepage/userprofile/{{authService.loggedInMember?.id}}" class="me-5 ilk" src="/assets/img/sign.png" alt="" width="70px" height="70px"> <div style="padding-left: 2px;">Hesabım</div>
+                </li>
+                <li>
+                  <img  src="/assets/img/letter.png" alt=""  width="70px" height="70px" class="ikinci" routerLink="/aboutus"><div>Hakkımızda</div>
+                </li></div>
+               <!--  <div class="d-flex baglanti">
+                <li>
+              
+                </li>
+                <li>
+                  
+                </li>
+                </div> -->
+              </ul>
+          
+
+             </div>
+
+
+          </div>
+
+        </div>
+
+       </div>
+
+
+    </div>
+ </div>
+ </div>
+
+
+
+<div class="container">
+  <!--  <div>
+  <img src="/assets/img/readflower.png" alt="readflower" class="purple">
+   </div>-->
+   <div> 
+    <app-book-list-for-members></app-book-list-for-members>
+   </div>
+   <div>
+    <img class="desen" src="/assets/img/desen.png" alt="">
+   </div>
+</div>
+</div>
+
+ <app-footer></app-footer>

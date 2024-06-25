@@ -1,0 +1,59 @@
+<div class="mb-3">
+    
+    <br>
+     <div class="row">
+       <div class="col-md-3">
+     <div class="dropdown" style="margin-left:60%;">
+       <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+         Isbn Araması
+       </button>
+       <ul class="dropdown-menu" >
+   
+         <li><a class="dropdown-item" routerLink="/getBooksForMembers" >Genel Arama</a></li>
+   
+       </ul>
+     </div>
+   </div>
+   <div class="col-md-9">
+     <input class="form-control me-2" style="width: 450px;"type="search" placeholder="Anahtar Kelimeye Göre Kitap Arayın" aria-label="Search" [(ngModel)]="searchKey" >
+   </div>
+   </div>
+   </div>
+   
+   
+   <div class="container mt-5">
+     <table class="table">
+       <thead>
+         <tr>
+          
+           <th scope="col">Kitap Adı</th>
+           <th scope="col">ISBN</th>
+           <th scope="col">Sayfa </th>
+           <th scope="col">Dil</th>
+           <th scope="col">Stok Adedi</th>
+           <th scope="col">Açıklama</th>
+           <th scope="col">Kategori</th>
+           <th scope="col">YayınEvi</th>
+           <th scope="col">Yazar</th>
+   
+           
+           <th></th>
+         </tr>
+       </thead>
+       <tbody>
+         <tr *ngFor="let item of bookList | FilterBookListForIsbnPipe : searchKey">
+           <th scope="row">{{item.name}}</th>
+           <th scope="row">{{item.isbn}}</th>
+           <th scope="row">{{item.page}}</th>
+           <th scope="row">{{item.language}}</th>
+           <th scope="row">{{item.unitsInStock}}</th>
+           <th scope="row">{{item.description}}</th>
+           <th scope="row">{{item.categoryName}}</th>
+           <th scope="row">{{item.publisherName}}</th>
+           <th scope="row">{{item.authorName}}</th>
+           <button type="button" class="btn btn-outline-danger " id="boyut" >Ödünç Al</button>
+         </tr>
+       </tbody>
+     </table>
+       <p *ngIf="bookList.length <= 0">Yükleniyor...</p>
+     </div>

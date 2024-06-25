@@ -1,0 +1,43 @@
+
+<div class="content">
+  <div class="card" >
+      <div class="card-header"><h5 class="title font-weight-bold">Yayınevi Düzenle</h5></div>
+  
+      <div class="card-body">
+  
+        
+          <table class="table">
+              <thead>
+                <tr>
+                  <th scope="row"> Yayınevleri</th>
+                
+                 
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of publisherList " >  <!-- | filterBookListForCategory : searchKey -->
+                  <th scope="row">{{item.name}}</th>
+                  <th>
+                  <button  class="btn btn-outline-danger me-3" (click)="deletePublisher($event,item.id)" > Sil</button> 
+                  <a routerLink="publisher/{{item.id}}/publisherupdate" class="btn btn-outline-dark" (click)="onSelectPublisher(item)">Güncelle</a>
+                </tr>
+              </tbody>
+           
+              <p class="spinner-border text-dark mt-2" role="status"  *ngIf="publisherList.length <= 0">
+                <span class="visually-hidden">Loading...</span>
+             
+         </table>
+      
+         <div class="card-footer" >
+          
+      </div>
+      </div>
+  
+     
+  
+    </div>
+  </div>
+   
+ 
+  
+  

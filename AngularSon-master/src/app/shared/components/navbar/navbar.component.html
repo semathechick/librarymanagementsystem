@@ -1,0 +1,34 @@
+
+
+  <nav class="nav-bar">
+    <div class="icon-nav">
+        <i class="fas fa-moon"></i>
+        <span class="logo">KYS LOGO</span>
+    </div>
+
+    <ul class="list-nav-bar ">
+        <div *ngIf="isLoggedIn(); else notLoggedIn">
+            
+            <a routerLink="/homepage/{{authService.loggedInMember?.id}}/profile">Mevcut Oturum:{{ authService.loggedInMember?.email }}</a>
+            <!-- Diğer bilgileri de buraya ekleyebilirsiniz -->
+          </div>
+          
+          <ng-template #notLoggedIn>
+            <p>Giriş yapılmamış.</p>
+            <!-- Giriş yapma bağlantısı veya başka bir içerik ekleyebilirsiniz -->
+          </ng-template>
+        <li class="list-item"><a routerLink="/homepage">Ana Sayfa</a></li>
+        <li class="list-item"><a routerLink="/getBooks">Kitaplar</a></li>
+        <li class="list-item"><a routerLink="/addBook">Kitap Ekle</a></li>
+        <li class="list-item"><a routerLink="/register">Üye Ol</a></li>
+        <ng-template #showLog ><li class="list-item" ><a routerLink="/login">Giriş</a></li></ng-template>
+        <li class="list-item" *ngIf="isLoggedIn();else showLog"><a (click)="logOut()">Çıkış</a>
+        <p></p>
+        </li>
+        
+        
+        
+    </ul>
+    <div class="fas burger-menu" id="burger-menu">&#9776;</div>
+</nav>
+

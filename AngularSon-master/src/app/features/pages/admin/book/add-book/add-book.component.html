@@ -1,0 +1,76 @@
+<div class="content animate__animated  animate__fadeInRight">
+    <div class="card">
+        <div class="card-header">Kitap Ekle</div>
+        <div class="card-body">
+            <form [formGroup]="bookAddForm">
+                
+                <div class="mb-3">
+                    <label>Kitap adı:</label>
+                    <input type="text" id="name" placeholder="Kitap adı" formControlName="name" class="form-control"/>
+                    <myinput-errors fieldName="name" />
+                </div>
+                
+                <div class="mb-3" id="ortak">
+                    <label for="categoryId" > Kategori: </label>
+                    <select name="categoryId" id="categoryId" formControlName="categoryId" (change)="onCategoryChange($event)">
+                      <option *ngFor="let item of categories" [value]="item.id">
+                        {{ item.categoryName }}
+                      </option>
+                    </select>
+                    <myinput-errors fieldName="categoryId" />
+                </div>
+
+                <div class="mb-3">
+                    <label>ISBN:</label>
+                    <input type="text" id="isbn" placeholder="isbn" formControlName="isbn" class="form-control"/>
+                    <myinput-errors fieldName="isbn" />
+                </div>
+                <div class="mb-3">
+                    <label>Dil</label>
+                    <input type="text" id="language" placeholder="language" formControlName="language" class="form-control"/>
+                    <myinput-errors fieldName="language" />
+                </div>
+                <div class="mb-3">
+                    <label>Sayfa:</label>
+                    <input type="number" id="page" placeholder="page" formControlName="page" class="form-control"/>
+                    <myinput-errors fieldName="page" />
+                </div>
+
+                <div class="mb-3" id="ortak">
+                    <label for="authorId" > Yazar: </label>
+                    <select name="authorId" id="authorId" formControlName="authorId" (change)="onAuthorChange($event)">
+                      <option *ngFor="let item of authors" [value]="item.id">
+                        {{ item.name }}
+                      </option>
+                    </select>
+                    <myinput-errors fieldName="authorId" />
+                </div>
+                
+                <div class="mb-3" id="ortak">
+                    <label for="publisherId" > Yayınevi: </label>
+                    <select  name="publisherId" id="publisherId" formControlName="publisherId" (change)="onPublisherChange($event)">
+                      <option *ngFor="let item of publishers" [value]="item.id">
+                        {{ item.name }}
+                      </option>
+                    </select>
+                    <myinput-errors fieldName="publisherId" />
+                </div>
+
+
+                <div class="mb-3">
+                    <label>Stok Adedi:</label>
+                    <input type="number" id="unitsInStock" placeholder="stok adedi" formControlName="unitsInStock" class="form-control"/>
+                    <myinput-errors fieldName="unitsInStock" />
+                </div>
+                <div class="mb-3">
+                    <label>Açıklama:</label>
+                    <textarea  placeholder="description" id="description" formControlName="description" class="form-control" style="height: 100px;"></textarea>
+                    <myinput-errors fieldName="description" />
+                </div>
+            </form>
+        </div>
+        <div class="card-footer">
+            <button class="btn btn-outline-dark w-50" (click)="addToDb()">Ekle</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,31 @@
+<div class="content">
+    <div class="col-md-12">
+    <div class="card">
+        <div class="card-header">Güncelleme</div>
+        <div class="card-body">
+            <form [formGroup]="authorUpdateForm">
+         
+                <div class="mb-3">
+                    <label>Yazar Adı:</label>
+                    <input type="text" placeholder={{authorService.selectedAuthor.name}} formControlName="name" (change)="onNameChange($event)" class="form-control" value=""/>
+                    <myinput-errors fieldName="name" />
+                </div>
+                  <div class="mb-3">
+                    <label>Kimlik:</label>
+                    <input type="text" placeholder={{authorService.selectedAuthor.identityNumber}} formControlName="identityNumber" class="form-control"/>
+                </div>
+                  <div class="mb-3">
+                    <label>Biyografi:</label>
+                    <textarea  placeholder={{authorService.selectedAuthor.biography}} formControlName="biography" class="form-control" style="height: 100px;"></textarea>
+                  </div>
+                
+            </form>
+        </div>
+        <div class="card-footer">
+            <button class="btn btn-outline-dark w-50" (click)="updateToDb()">Güncelle</button>
+           
+           
+        </div>
+    </div>
+</div>
+

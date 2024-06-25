@@ -1,0 +1,21 @@
+<div class="col-8 animate__animated animate__fadeInTopLeft">
+  <div>
+    <p style="color: red;">Rezervasyonlarım</p>
+  </div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Rezerve Edilecek Kitap</th>
+        <th>Alış Tarihi</th>
+        <th>İade Tarihi</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of reservations">
+        <td>{{ item.bookName | uppercase }}</td>
+        <td>{{ item.rezervationDate | date }}</td>
+        <td>{{ item.expirationDate | date }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

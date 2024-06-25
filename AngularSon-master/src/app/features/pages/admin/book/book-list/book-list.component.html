@@ -1,0 +1,76 @@
+<div class="mb-3">
+    
+  <label for="filterText" class="form-label">Kitap Ara</label>
+  <div class="row">
+    <div class="col-md-3">
+  <div class="dropdown" id="fifthdropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+      Arama Kriteri
+    </button>
+    <ul class="dropdown-menu" >
+      <li><a class="dropdown-item" routerLink="/books" >Genel Arama</a></li>
+      <li><a class="dropdown-item" routerLink="/booksforcategory">Kategori</a></li>
+      <li><a class="dropdown-item" routerLink="/booksforisbn" >Isbn</a></li>
+      <li><a class="dropdown-item" routerLink="/booksforauthor" >Yazar</a></li>
+    </ul>
+  </div>
+</div>
+<div class="col-md-9">
+  <input class="form-control" placeholder="Search" [(ngModel)]="searchKey" />
+</div>
+</div>
+</div>
+
+<div class="content">
+  <div class="card" >
+      <div class="card-header"><h5 class="title font-weight-bold">Kitap Düzenle</h5></div>
+  
+      <div class="card-body">
+  <table class="table">
+    <thead>
+      <tr>
+       
+        <th scope="col">Başlık</th>
+        <th scope="col">ISBN</th>
+        <th scope="col">Sayfa </th>
+        <th scope="col">Yazar</th>
+        <th scope="col">Dil</th>
+        <th scope="col">Stok</th>
+        <th scope="col">Açıklama</th>
+        <th scope="col">Kategori</th>
+        <th scope="col">Yayınevi</th>
+        
+
+        
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of bookList | FilterBookListForCategory : searchKey">
+        <th scope="row">{{item.name}}</th>
+        <th scope="row">{{item.isbn}}</th>
+        <th scope="row">{{item.page}}</th>
+        <th scope="row">{{item.authorName}}</th>
+        <th scope="row">{{item.language}}</th>
+        <th scope="row">{{item.unitsInStock}}</th>
+        <th scope="row">{{item.description}}</th>
+        <th scope="row">{{item.categoryName}}</th>
+        <th scope="row">{{item.publisherName}}</th>
+       
+          <!-- <a routerLink="book/{{item.id}}/book-update" class="btn btn-outline-dark" id="boyut">Güncelle</a>-->
+          <button type="submit" routerLink="/book-update" (click)="onSelectBook(item)" class="btn btn-outline-dark me-3" id="boyut" >Güncelle</button>
+        
+       
+          <button type="button" (click)="deleteBook($event,item.id)" class="btn btn-outline-danger " id="boyut" >Sil</button>
+          
+      
+      </tr>
+    </tbody>
+  </table>
+  <div>
+    <p class="spinner-border text-dark mt-2" role="status"  *ngIf="bookList.length <= 0">
+      <span class="visually-hidden">Loading...</span>
+   </p>
+    </div>
+    </div>
+    </div>

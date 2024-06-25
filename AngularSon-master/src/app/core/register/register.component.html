@@ -1,0 +1,50 @@
+<div class=" animate__animated  animate__slideInUp">
+<div class="main mt-3 ">  	
+    <input type="checkbox" id="chk" aria-hidden="true">
+
+        
+            <label for="chk" aria-hidden="true"><img src="/assets/img/check.png" width="50px;" alt=""></label>
+            <form [formGroup]="registerForm">
+                <div class="mb-3">
+                    <h5 >Adınız:</h5>
+                    <input type="text"  formControlName="firstName" class="form-control"/>
+                   <myinput-errors class="aaa" fieldName="firstName" />
+                   
+                </div>
+                <div class="mb-3">
+                    <h5>Soyadınız:</h5>
+                    <input type="text"  formControlName="lastName" class="form-control"/>
+                    <myinput-errors class="aaa" fieldName="lastName" />
+                </div>
+                <div class="mb-3">
+                    <h5>E-mail:</h5>
+                    <input type="email"  formControlName="email" class="form-control" />
+                  <myinput-errors class="aaa" fieldName="email" />  
+                </div>
+                   <div>
+                    <h5  class="pb-2">Şifre:</h5>
+                    <div class="password-container">
+                    <input formControlName="password" [type]="passwordsignUpHidden ? 'password' : 'text'" class="form-control" placeholder="******">
+                     <div class="eye-icon" (click)="SignUpPasswordVisibility()">
+                      <span *ngIf="passwordsignUpHidden" ><i class="bi bi-eye-slash"></i></span>
+                      <span *ngIf="!passwordsignUpHidden" ><i class="bi bi-eye"></i></span>
+                    </div></div>
+               
+               <div> <myinput-errors class="aaa" fieldName="password" /></div>
+                 
+               </div>  
+                
+            </form>
+               
+
+         
+            
+            <button class="clr mt-4" routerLink="/login" [disabled]="!registerForm.valid" (click)="onRegister()">Kayıt Ol</button>
+    </div>
+    </div>
+
+     
+           
+ 
+
+

@@ -1,0 +1,31 @@
+
+
+<div class="animate__animated  animate__slideInRight">
+	<div class="main mt-5">  	
+		<input type="checkbox" id="chk" aria-hidden="true">
+
+			<div class="login">
+				<form [formGroup]="loginForm">
+					<label for="chk" aria-hidden="true"><img src="/assets/img/userm.png" width="50px;" alt=""></label>
+          <div class="form-group mb-4">
+            <h5  class="pb-2">E-mail: </h5>
+            <input formControlName="email" type="email" class="form-control height-4 px-4 "  placeholder="account@account.com">
+            <myinput-errors class="konum" fieldName="email" /> 
+            </div>
+            
+            <h5  class="pb-2">Şifre:</h5>
+            <div class="password-container">
+            <input formControlName="password" [type]="passwordsignInHidden ? 'password' : 'text'" class="form-control" placeholder="******">
+             <div class="eye-icon" (click)="SignInPasswordVisibility()">
+              <span *ngIf="passwordsignInHidden" ><i class="bi bi-eye-slash"></i></span>
+              <span *ngIf="!passwordsignInHidden" ><i class="bi bi-eye"></i></span>
+            </div></div>
+            <div> <myinput-errors class="konum" fieldName="password" /></div>
+			
+           <button routerLink="/homepage" type="submit" class="btn btn-outline-danger" (click)="onLogin()" > Giriş </button>
+
+           <button routerLink="/register" class="btnm">Hesap Oluştur</button>
+				</form>
+			</div>
+    </div>
+

@@ -1,0 +1,50 @@
+<div class="container mt-5">
+  <div class="mb-3">
+    <div class="row">
+      <div class="dropfirst d-flex align-items-center">
+        <div class="dropdown-center me-2">
+          <button class="first btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+           Yazar Ara
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" routerLink="/getBooksForIsbnFilter" >ISBN Arama</a></li>
+          </ul>
+        </div>
+        <input class="form-control me-2 fark" style="width: 450px;" type="search" placeholder="Anahtar Kelimeye Göre Kitap Arayın" aria-label="Search" [(ngModel)]="authorFilter">
+      </div>
+       
+     </div>
+  <div class="row mt-5">
+
+    <div class="d-flex flex-wrap justify-content-center">
+      <div class="prd-main-wrapper" *ngFor="let item of bookList | author:authorFilter | paginate: {itemsPerPage: tableSize, currentPage: page, totalItems: count}; let i = index">
+        <div class="prd-content">
+          <div class="prd-card-wrapper">
+            <div class="prd-infos">
+              <h5 class="card-title mb-2">{{item.name}}</h5>
+              <h6 class="card-subtitle mb-2 text-muted">ISBN: {{item.isbn}}</h6>
+              <p class="card-text"><span>Yazar:</span> {{item.authorName}}</p>
+              <div class="d-flex">
+                <p class="card-text me-3"><span>Sayfa:</span> {{item.page}}</p>
+                <p class="card-text me-3"><span>Dil:</span> {{item.language}}</p>
+                <p class="card-text"><span>Stok Adedi:</span> {{item.unitsInStock}}</p>
+              </div>
+              <p class="card-text"><span>Kategori:</span> {{item.categoryName}}</p>
+              <p class="card-text"><span>Yayınevi:</span> {{item.publisherName}}</p>
+              <div class="aciklama">
+                <p class="card-text"><span>Açıklama:</span> {{item.description}}</p>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="prd-buttons w-100">
+              <button type="button" class="btn btn-outline-danger w-50" *ngIf="authService.loggedInMember != null" (click)="onSelectBook(item)">Ödünç Al</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <pagination-controls previousLabel="Önceki" nextLabel="Sonraki" class="pagination-spreads" (pageChange)="onTableDataChange($event)"></pagination-controls>
+    
+</div>

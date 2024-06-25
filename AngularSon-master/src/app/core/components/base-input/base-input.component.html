@@ -1,0 +1,12 @@
+<div [formGroup]="form">
+  
+    <input
+      [formControlName]="controlName"
+      [type]="inputType"
+      class="form-control"
+      [placeholder]="placeholder"
+      
+    />
+    <myinput-errors [fieldName]="controlName" />
+  
+  </div>

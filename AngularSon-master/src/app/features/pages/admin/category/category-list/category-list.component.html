@@ -1,0 +1,38 @@
+<div class="content">
+  <div class="card" >
+      <div class="card-header"><h5 class="title font-weight-bold">Kategori Düzenle</h5></div>
+  
+      <div class="card-body">
+  
+        
+          <table class="table">
+              <thead>
+                <tr>
+                  <th scope="row"> Kategoriler</th>
+                
+                 
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of categoryList " >  <!-- | filterBookListForCategory : searchKey -->
+                  <th scope="row">{{item.categoryName}}</th>
+                  <th>
+                  <button  class="btn btn-outline-danger me-3" (click)="deleteCategory($event,item.id)" > Sil</button> 
+                  <a  class="btn btn-outline-dark" routerLink="update/{{item.id}}" (click)="onSelectCategory(item)"> Güncelle</a></th>
+                  
+                </tr>
+              </tbody>
+           
+              <p *ngIf="categoryList.length <= 0">Yükleniyor...</p>
+             
+         </table>
+      
+         <div class="card-footer" >
+          
+      </div>
+      </div>
+  
+     
+  
+    </div>
+  </div>

@@ -1,0 +1,166 @@
+.container {
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .prd-main-wrapper {
+      padding-top: 37px;
+      background-color: rgba(94, 106, 117, 0.04);
+      transition: 0.3s;
+      height: 530px;
+      width: 100%; // Kart genişliğini %100 yapıyoruz ve medya sorgularında ayarlayacağız.
+      max-width: 400px; // Maksimum genişliği 400px olarak belirliyoruz.
+      position: relative;
+      margin: 10px;
+      border: 1px solid black;
+      border-radius: 5px;
+      box-shadow: inset 0 0 0.5em rgb(117, 19, 25);
+
+      .prd-wrapper {
+        margin: 0 5px;
+        position: relative;
+        height: 200px;
+        border-bottom: 1px solid grey;
+
+        .product-img {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: relative;
+          text-align: center;
+          transform-origin: center;
+          transition: transform 0.4s ease-in-out;
+        }
+
+        .product-img:hover,
+        .product-img:focus {
+          transform: scale(1.1);
+        }
+      }
+
+      .prd-content {
+        position: relative;
+        padding-top: 10px;
+
+        .prd-card-wrapper {
+          padding: 0 10px;
+
+          .prd-infos {
+            height: 32px;
+            font-size: 14px;
+            line-height: 26px;
+            font-weight: 500;
+            text-overflow: ellipsis;
+            margin-bottom: 10px;
+            margin-left: 40px;
+
+            .aciklama {
+              .card-text {
+                overflow: scroll;
+                height: 150px;
+                text-align: left;
+                width: 320px;
+              }
+            }
+          }
+        }
+
+        .prd-info-wrapper {
+          align-items: center;
+          justify-content: center;
+          margin-top: 8px;
+          margin-bottom: 8px;
+          height: 65px;
+          padding-top: 10px;
+          margin-right: 10px;
+
+          .prdm {
+            font-size: 13px;
+            padding-left: 10px;
+            color: #403500;
+          }
+        }
+      }
+
+      .prd-buttons {
+        padding: 5px 10px;
+        position: absolute;
+        top: 420px;
+        left: 180px;
+      }
+    }
+
+    .first {
+      width: 180px;
+      background-image: linear-gradient(transparent, rgb(139, 75, 75));
+      color: rgb(244, 225, 225);
+      border: none;
+    }
+  }
+
+  input:focus {
+    border-color: #814348;
+    border: 1px solid black;
+    box-shadow: 0 0 0 0.2rem rgba(131, 70, 70, 0.25);
+  }
+
+  span {
+    font-weight: 600;
+    font-size: 15px;
+    color: #403e36;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+
+  h5::first-letter {
+    font-size: 28px;
+  }
+
+  .dropfirst {
+    justify-content: center;
+    align-items: center;
+  }
+
+  pagination-controls {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+  }
+
+  .pagination-spreads::ng-deep .current {
+    background-color: #5b2c31;
+    font-size: 16px;
+  }
+
+  .pagination-spreads::ng-deep .pagination-next:hover {
+    background-color: rgb(200, 193, 193);
+    color: black;
+  }
+
+  .pagination-spreads::ng-deep .pagination-previous:hover {
+    background-color: rgb(200, 193, 193);
+    color: black;
+  }
+
+  @media screen and (max-width: 768px) {
+    .prd-main-wrapper {
+      width: 100%; 
+      margin-bottom: 20px;
+    }
+    .dropfirst {
+      flex-direction: row;
+      align-items: stretch;
+    }
+
+    .dropdown-center {
+      margin-bottom: 10px;
+    }
+
+    .form-control {
+      margin-bottom: 10px;
+    }
+  }
+
+  
+
+}

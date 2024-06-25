@@ -1,0 +1,32 @@
+<div class="content animate__animated  animate__fadeInRight">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+            <h5 class="title">Duyuru Ekle</h5>
+        </div>
+        <div class="card-body">
+        <form [formGroup]="announcementAddForm">
+          <div class="mb-3 row">
+            <label for="title" class="col-sm-2 col-form-label">Başlık:</label>
+            <div class="col-sm-10">
+              <input type="text" id="title" formControlName="title" class="form-control" placeholder="Başlık"/>
+              <myinput-errors fieldName="title"/>
+           </div>
+           
+          </div>
+
+          <div class="mb-3">
+            <label for="description">Açıklama:</label>
+            <textarea  placeholder="açıklama" id="description" formControlName="description" class="form-control" style="height: 100px;"></textarea>
+            <myinput-errors fieldName="description"/>
+        </div>
+        </form>
+        </div>
+        
+        <div class="card-footer">
+          <button class="btn btn-outline-dark w-50"  (click)="addToDb()">Ekle</button>
+        </div> 
+    </div>
+  </div>
+  
+
